@@ -1,0 +1,47 @@
+<div class="page-title mat-elevation-z6">
+  <h1>User List</h1>
+  <button mat-flat-button color="accent" [routerLink]="['/userregister']">Add User</button>
+</div>
+
+
+
+<div class="page-content">
+  <div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+
+      <tr>
+        <th>Sr. No.</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Color</th>
+        <th>Mobile</th>
+        <th>Email</th>
+        <th>Action</th>
+      </tr>
+
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userList; let i= index">
+        <td>{{i + 1}}</td>
+        <td>{{user.userName}}</td>
+        <td>{{user.userCity}}</td>
+        <td>{{user.userState}}</td>
+        <td>{{user.userMobile}}</td>
+        <td>{{user.userEmail}}</td>
+        <td>
+          <button mat-icon-button title="edit data" color="primary" [routerLink]="['/userupdate',user.userId]">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button title="view" color="accent" [routerLink]="['/viewuser',user.userId]">
+            <mat-icon>visibility</mat-icon>
+          </button>
+          <button mat-icon-button title="delete data" color="warn" (click)="delete(user.userId)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>

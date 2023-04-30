@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+// @import url(./node_modules/bootstrap/scss/bootstrap.scss);
+
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: azure;}
+
+.page-title{background-color: #9c27b0;color: aliceblue;display: flex;align-items: center;justify-content: center;padding: 20px ;
+    h1{margin: 0;}
+    button{margin-left: auto;}}
+.page-content{padding: 50px 20px;
+    th{ background-color: beige; color: indigo; font-size: 20px; text-align: center; }}
+mat-form-field{max-width: 400px;width: 100%;margin-top: 5px;}
+.form-div{display: flex;flex-direction: column;align-items: center;margin-top: 40px;}
+table{text-align: center;white-space: nowrap;
+    tbody tr{font-size: 18px;vertical-align: middle;}}
+
+

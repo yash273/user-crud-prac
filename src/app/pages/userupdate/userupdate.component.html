@@ -1,0 +1,41 @@
+<div class="page-title mat-elevation-z6">
+    <h1>Update User</h1>
+</div>
+
+<form class="form-div">
+
+    <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput [(ngModel)]="userObj.userName" name="userName" type="text">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>City</mat-label>
+        <mat-select [(ngModel)]="userObj.userCity" name="userCity" type="text">
+            <mat-option value="surat">surat</mat-option>
+            <mat-option value="ahemdabad">ahemdabad</mat-option>
+            <mat-option value="vadodara">vadodara</mat-option>
+            <mat-option value="rajkot">rajkot</mat-option>
+            <mat-option value="bhavnagar">bhavnagar</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Favorite Color</mat-label>
+        <mat-select [(ngModel)]="userObj.userState" name="userState">
+            <mat-option value="red">red</mat-option>
+            <mat-option value="green">green</mat-option>
+            <mat-option value="pink">pink</mat-option>
+            <mat-option value="blue">blue</mat-option>
+        </mat-select>
+    </mat-form-field>
+    
+        <mat-form-field appearance="outline">
+            <mat-label>Mobile</mat-label>
+            <input matInput [(ngModel)]="userObj.userMobile" name="userMobile">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput [(ngModel)]="userObj.userEmail" name="userEmail" type="text">
+        </mat-form-field>
+    <button mat-flat-button title="update data" color="accent" (click)="updateUser()" [routerLink]="['/userlisting']">Update</button>
+
+    </form>
