@@ -2,9 +2,9 @@ export class userObj{
     userId?: string;
     userName?: string;
     userCity?: string;
-    userColor?: string;
+    userAddress?: string;
     userMobile?: string;
     userEmail?: string;
-    
-
+    userCheck?: string;
+    userGender?: string;
 }

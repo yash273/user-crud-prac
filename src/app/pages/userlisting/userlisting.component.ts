@@ -41,7 +41,7 @@ export class UserlistingComponent implements OnInit {
 
  
 
-  displayedColumns: string[] = ['srNo','userName', 'userCity', 'userColor', 'userMobile', 'userEmail', 'Action'];
+  displayedColumns: string[] = ['srNo','userName','userGender', 'userCity', 'userAddress', 'userMobile','userCheck', 'userEmail', 'Action'];
 
 
 

@@ -18,6 +18,8 @@ import { UserupdateComponent } from './pages/userupdate/userupdate.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ViewuserComponent } from './pages/viewuser/viewuser.component';
 import { MatRadioModule } from '@angular/material/radio';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { MatRadioModule } from '@angular/material/radio';
     FormsModule,
     MatTableModule,
     NgbModule,
-    MatRadioModule
+    MatRadioModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,18 +11,30 @@
     </mat-form-field>
 
     <mat-form-field appearance="outline">
+        <mat-label>Gender</mat-label>
+        <input matInput [(ngModel)]="userObj.userGender" name="userGender" readonly>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
         <mat-label>City</mat-label>
         <input matInput [(ngModel)]="userObj.userCity" name="userCity" type="text" readonly>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
         <mat-label>Favorite Color</mat-label>
-        <input matInput [(ngModel)]="userObj.userColor" name="userColor" type="text" readonly>
+        <input matInput [(ngModel)]="userObj.userAddress" name="userAddress" type="text" readonly>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
         <mat-label>Mobile</mat-label>
         <input matInput [(ngModel)]="userObj.userMobile" name="userMobile" readonly>
+    </mat-form-field>
+
+    <!-- <mat-checkbox [(ngModel)]="userObj.userCheck" class="example-margin" name="userCheck"  #userMobile="ngModel" ngModel >Check me!</mat-checkbox> -->
+
+    <mat-form-field appearance="outline">
+        <mat-label>Checked</mat-label>
+        <input matInput [(ngModel)]="userObj.userCheck" name="userCheck" readonly>
     </mat-form-field>
 
     <mat-form-field appearance="outline">

@@ -10,6 +10,16 @@
         <mat-error *ngIf="userName.invalid">Please enter valid input</mat-error>
     </mat-form-field>
 
+    <span class="gender-span">
+        <label>Your Gender</label>
+        <mat-radio-group aria-label="Select an option" [(ngModel)]="userObj.userGender" name="userGender" #userGender="ngModel" required ngModel >
+            <mat-radio-button value="male">Male</mat-radio-button>
+            <mat-radio-button value="female">Female</mat-radio-button>
+            <mat-radio-button value="other">Other</mat-radio-button>
+            <!-- <mat-error *ngIf="userGender.invalid">Please choose your Gender</mat-error> -->
+          </mat-radio-group>
+        </span>
+
     <mat-form-field appearance="outline">
         <mat-label>City</mat-label>
         <mat-select [(ngModel)]="userObj.userCity" name="userCity" type="text" #userCity="ngModel" required ngModel>
@@ -23,14 +33,9 @@
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-        <mat-label>Favorite Color</mat-label>
-        <mat-select [(ngModel)]="userObj.userColor" name="userColor" #userColor="ngModel" required ngModel>
-            <mat-option value="red">Red</mat-option>
-            <mat-option value="green">Green</mat-option>
-            <mat-option value="pink">Pink</mat-option>
-            <mat-option value="blue">Blue</mat-option>
-        </mat-select>
-        <mat-error *ngIf="userColor.invalid">Please select any</mat-error>
+        <mat-label>Address</mat-label>
+        <textarea matInput [(ngModel)]="userObj.userAddress" name="userAddress" #userAddress="ngModel" type="text"  ngModel placeholder="Address" required></textarea>
+        <mat-error *ngIf="userAddress.invalid">Please enter valid input</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
@@ -39,15 +44,22 @@
         <mat-error *ngIf="userMobile.invalid ">Please enter valid input</mat-error>
     </mat-form-field>
 
+    <!-- <mat-checkbox [(ngModel)]="userObj.userCheck" class="example-margin" name="userCheck"  #userMobile="ngModel" ngModel>Check me!</mat-checkbox> -->
+
+
     <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
         <input matInput [(ngModel)]="userObj.userEmail" email placeholder="name@example.com" name="userEmail" type="text" required #userEmail="ngModel" ngModel>
         <mat-error *ngIf="userEmail.invalid">Please enter valid email</mat-error>
     </mat-form-field>
+
     <div class="cta">
         <button mat-icon-button title="back" color="primary" [routerLink]="['/userlisting']">
             <mat-icon>keyboard_backspace</mat-icon>
         </button>
+
+        <mat-checkbox [(ngModel)]="userObj.userCheck" class="example-margin" name="userCheck"  #userMobile="ngModel" ngModel >Check me!</mat-checkbox>
+
 
         <button mat-flat-button title="update data" color="accent" (click)="updateUser()" [routerLink]="['/userlisting']">Update</button>
     </div>

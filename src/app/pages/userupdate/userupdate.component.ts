@@ -31,7 +31,10 @@ export class UserupdateComponent implements OnInit {
         this.userObj.userEmail = currentUser.userEmail;
         this.userObj.userMobile = currentUser.userMobile;
         this.userObj.userName = currentUser.userName;
-        this.userObj.userColor = currentUser.userColor;
+        this.userObj.userAddress = currentUser.userAddress;
+        this.userObj.userCheck = currentUser.userCheck;
+        this.userObj.userGender = currentUser.userGender;
+
       }
     }
   }
