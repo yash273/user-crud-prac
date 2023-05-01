@@ -1,35 +1,52 @@
 <div class="page-title mat-elevation-z6">
   <h1>User List</h1>
-  <button mat-flat-button color="accent" [routerLink]="['/userregister']">Add User</button>
+  <button mat-flat-button color="accent" [routerLink]="['/userregister']" title="Add User">Add User</button>
 </div>
 
 
 
 <div class="page-content">
-  <div class="table-responsive">
-  <table class="table table-bordered">
-    <thead>
 
-      <tr>
-        <th>Sr. No.</th>
-        <th>Name</th>
-        <th>City</th>
-        <th>Color</th>
-        <th>Mobile</th>
-        <th>Email</th>
-        <th>Action</th>
-      </tr>
+  <div class="table-res">
 
-    </thead>
-    <tbody>
-      <tr *ngFor="let user of userList; let i= index">
-        <td>{{i + 1}}</td>
-        <td>{{user.userName}}</td>
-        <td>{{user.userCity}}</td>
-        <td>{{user.userState}}</td>
-        <td>{{user.userMobile}}</td>
-        <td>{{user.userEmail}}</td>
-        <td>
+    <table mat-table [dataSource]="userList" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="srNo">
+        <th mat-header-cell *matHeaderCellDef> Sr .No. </th>
+        <td mat-cell *matCellDef="let user;  let i= index"> {{i + 1}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="userName">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let user"> {{user.userName | titlecase}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="userCity">
+        <th mat-header-cell *matHeaderCellDef> City </th>
+        <td mat-cell *matCellDef="let user"> {{user.userCity | titlecase}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="userColor">
+        <th mat-header-cell *matHeaderCellDef> Color </th>
+        <td mat-cell *matCellDef="let user"> {{user.userColor | titlecase}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="userMobile">
+        <th mat-header-cell *matHeaderCellDef> Mobile </th>
+        <td mat-cell *matCellDef="let user"> {{user.userMobile}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="userEmail">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let user"> {{user.userEmail | lowercase}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let user">
           <button mat-icon-button title="edit data" color="primary" [routerLink]="['/userupdate',user.userId]">
             <mat-icon>edit</mat-icon>
           </button>
@@ -40,8 +57,14 @@
             <mat-icon>delete</mat-icon>
           </button>
         </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+
+  </div>
+
+
 </div>

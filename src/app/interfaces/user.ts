@@ -1,8 +1,10 @@
 export class userObj{
-    userId?: number;
+    userId?: string;
     userName?: string;
     userCity?: string;
-    userState?: string;
-    userMobile?: number;
+    userColor?: string;
+    userMobile?: string;
     userEmail?: string;
+    
+
 }

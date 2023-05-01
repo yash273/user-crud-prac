@@ -31,21 +31,10 @@ export class UserupdateComponent implements OnInit {
         this.userObj.userEmail = currentUser.userEmail;
         this.userObj.userMobile = currentUser.userMobile;
         this.userObj.userName = currentUser.userName;
-        this.userObj.userState = currentUser.userState;
+        this.userObj.userColor = currentUser.userColor;
       }
     }
   }
-
-  // newUserId(){
-  //   debugger;
-  //   const oldRecords = localStorage.getItem('userList');
-  //   if ( oldRecords !== null) {
-  //     const userList = JSON.parse(oldRecords);
-  //     return userList.length + 1;
-  //   }else {
-  //     return 1;
-  //   }
-  // }
 
   updateUser() {
     // debugger;
@@ -57,7 +46,7 @@ export class UserupdateComponent implements OnInit {
       userList.push(this.userObj);
       localStorage.setItem('userList',JSON.stringify(userList));
     } 
-    this.router.navigateByUrl('/userlisting');
+    // this.router.navigateByUrl('/userlisting');
 
   }
 

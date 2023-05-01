@@ -1,40 +1,33 @@
 <div class="page-title mat-elevation-z6">
     <h1>View User Details</h1>
-  <button mat-flat-button title="user list" color="accent" [routerLink]="['/userlisting']">User List</button>
+    <button mat-flat-button title="user list" color="accent" [routerLink]="['/userlisting']">User List</button>
 </div>
 
 <form class="form-div">
 
     <mat-form-field appearance="outline">
         <mat-label>Name</mat-label>
-        <input matInput [(ngModel)]="userObj.userName" name="userName" type="text" disabled>
+        <input matInput [(ngModel)]="userObj.userName" name="userName" type="text" readonly>
     </mat-form-field>
+
     <mat-form-field appearance="outline">
         <mat-label>City</mat-label>
-        <mat-select [(ngModel)]="userObj.userCity" name="userCity" type="text" disabled>
-            <mat-option value="surat">surat</mat-option>
-            <mat-option value="ahemdabad">ahemdabad</mat-option>
-            <mat-option value="vadodara">vadodara</mat-option>
-            <mat-option value="rajkot">rajkot</mat-option>
-            <mat-option value="bhavnagar">bhavnagar</mat-option>
-        </mat-select>
+        <input matInput [(ngModel)]="userObj.userCity" name="userCity" type="text" readonly>
     </mat-form-field>
+
     <mat-form-field appearance="outline">
         <mat-label>Favorite Color</mat-label>
-        <mat-select [(ngModel)]="userObj.userState" name="userState" aria-disabled="true" disabled>
-            <mat-option value="red">red</mat-option>
-            <mat-option value="green">green</mat-option>
-            <mat-option value="pink">pink</mat-option>
-            <mat-option value="blue">blue</mat-option>
-        </mat-select>
+        <input matInput [(ngModel)]="userObj.userColor" name="userColor" type="text" readonly>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
         <mat-label>Mobile</mat-label>
-        <input matInput [(ngModel)]="userObj.userMobile" name="userMobile" disabled>
+        <input matInput [(ngModel)]="userObj.userMobile" name="userMobile" readonly>
     </mat-form-field>
+
     <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
-        <input matInput [(ngModel)]="userObj.userEmail" name="userEmail" type="text" disabled>
+        <input matInput [(ngModel)]="userObj.userEmail" name="userEmail" type="text" readonly>
     </mat-form-field>
+
 </form>

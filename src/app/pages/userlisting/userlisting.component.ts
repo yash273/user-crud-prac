@@ -12,6 +12,7 @@ export class UserlistingComponent implements OnInit {
   userList: userObj[];
   constructor() { 
     this.userList = [];
+    // const ELEMENT_DATA : userObj[]
   }
 
   ngOnInit(): void {
@@ -20,11 +21,13 @@ export class UserlistingComponent implements OnInit {
     if (records !== null) {
       this.userList = JSON.parse(records);
     }
+
   }
 
   delete(id : any){
     // debugger
     const oldRecords = localStorage.getItem('userList');
+    if(confirm("Are sure you want to delete this item ?"))
     if (oldRecords !== null) {
       const userList = JSON.parse(oldRecords);
       userList.splice(userList.findIndex( (a : any) => a.userId == id), 1);
@@ -35,6 +38,11 @@ export class UserlistingComponent implements OnInit {
       this.userList = JSON.parse(records);
     }
   }
+
+ 
+
+  displayedColumns: string[] = ['srNo','userName', 'userCity', 'userColor', 'userMobile', 'userEmail', 'Action'];
+
 
 
 }

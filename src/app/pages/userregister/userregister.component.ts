@@ -43,7 +43,7 @@ export class UserregisterComponent implements OnInit {
       userArr.push(this.userObj);
       localStorage.setItem('userList',JSON.stringify(userArr));
     }
-    this.router.navigateByUrl('/userlisting');
+    // this.router.navigateByUrl('/userlisting');
 
 
   }

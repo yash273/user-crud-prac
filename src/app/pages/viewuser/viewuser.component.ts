@@ -13,7 +13,7 @@ export class ViewuserComponent implements OnInit {
   userObj: userObj;
   
   constructor(private route: ActivatedRoute, private router: Router) { 
-    // debugger;
+    debugger;
     this.userObj = new userObj();
     this.route.params.subscribe((res) => {
       this.userObj.userId = res['id'];
@@ -21,7 +21,7 @@ export class ViewuserComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // debugger
+    debugger
     const oldRecords = localStorage.getItem('userList');
     if (oldRecords !== null) {
       const userList =JSON.parse(oldRecords);
@@ -31,7 +31,7 @@ export class ViewuserComponent implements OnInit {
         this.userObj.userEmail = currentUser.userEmail;
         this.userObj.userMobile = currentUser.userMobile;
         this.userObj.userName = currentUser.userName;
-        this.userObj.userState = currentUser.userState;
+        this.userObj.userColor = currentUser.userColor;
       }
     }
   }
