@@ -7,4 +7,5 @@ export class userObj{
     userEmail?: string;
     userCheck?: string;
     userGender?: string;
+  static userName: any;
 }
