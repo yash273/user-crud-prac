@@ -10,6 +10,7 @@ import { ViewDialogComponent } from '../view-dialog/view-dialog.component';
   ]
 })
 export class UserlistingComponent implements OnInit {
+  [x: string]: any;
 
   userList: userObj[];
   constructor( private dialog: MatDialog ) { 
@@ -31,7 +32,8 @@ export class UserlistingComponent implements OnInit {
     const records = localStorage.getItem('userList');
     if (records !== null) {
       this.userList = JSON.parse(records);
-    }
+      const hi =this.userList
+    } 
 
   }
 
@@ -54,17 +56,27 @@ export class UserlistingComponent implements OnInit {
 
   displayedColumns: string[] = ['srNo','userName','userGender', 'userCity', 'userAddress', 'userMobile','userCheck', 'userEmail', 'Action'];
 
-  openDialog(){
-    const records = localStorage.getItem('userList');
+ 
+  //   const records = localStorage.getItem('userList');
 
-    this.dialog.open(ViewDialogComponent,{width:'100%',maxWidth:'400px',
+  //   this.dialog.open(ViewDialogComponent,{width:'100%',maxWidth:'400px',
       
-   
-  })
+  //  data:{
+  //   type:'hi'
+  //  }
+  // })
+
+  openDialog() {
+    // const data = JSON.parse(localStorage.getItem('userList'));
+    // const records = localStorage.getItem('userList');
+    // const data =JSON.parse(records);
+    const dialogRef = this.dialog.open(ViewDialogComponent, {
+      data: this.userList
+    });
      
 
   
-  
   }
+  
 
 }

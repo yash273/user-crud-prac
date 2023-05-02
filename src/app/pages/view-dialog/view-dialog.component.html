@@ -1,14 +1,14 @@
+<mat-dialog #myDialog [data]="record"></mat-dialog>
 <h1 mat-dialog-title>Hi </h1>
 <div mat-dialog-content>
-    <p>What's your favorite animal?</p>
-    <!-- <p>Name: {{userObj.userName}}</p>
-    <p>Gender: {{userObj.userGender}}</p>
-    <p>City: {{userObj.userCity}}</p>
-    <p>Address: {{userObj.userAddress}}</p>
-    <p>Mobile: {{userObj.userMobile}}</p>
-    <p>Check: {{userObj.userCheck}}</p>
-    <p>Email: {{userObj.userEmail}}</p> -->
-    {{op}}
+    <p>Name: {{data.userName}}</p>
+    <p>Gender: {{data.userGender}}</p>
+    <p>City: {{data.userCity}}</p>
+    <p>Address: {{data.userAddress}}</p>
+    <p>Mobile: {{data.userMobile}}</p>
+    <p>Check: {{data.userCheck}}</p>
+    <p>Email: {{data.userEmail}}</p>
+        <ng-container *ngFor="let item of data">{{item}}</ng-container>
 </div>
 <div mat-dialog-actions>
     <button mat-button>No Thanks</button>
