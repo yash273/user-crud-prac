@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { userObj } from 'src/app/interfaces/user';
 import { MatDialog } from '@angular/material/dialog';
+import { ViewDialogComponent } from '../view-dialog/view-dialog.component';
 
 @Component({
   selector: 'app-userlisting',
@@ -11,7 +12,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class UserlistingComponent implements OnInit {
 
   userList: userObj[];
-  constructor( public dialog: MatDialog ) { 
+  constructor( private dialog: MatDialog ) { 
     this.userList = [];
     // const ELEMENT_DATA : userObj[]
     
@@ -53,6 +54,17 @@ export class UserlistingComponent implements OnInit {
 
   displayedColumns: string[] = ['srNo','userName','userGender', 'userCity', 'userAddress', 'userMobile','userCheck', 'userEmail', 'Action'];
 
+  openDialog(){
+    const records = localStorage.getItem('userList');
 
+    this.dialog.open(ViewDialogComponent,{width:'100%',maxWidth:'400px',
+      
+   
+  })
+     
+
+  
+  
+  }
 
 }
