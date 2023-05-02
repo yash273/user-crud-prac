@@ -15,7 +15,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-
 .page-content{padding: 50px 20px;
     th{ background-color: beige; color: indigo; font-size: 20px; text-align: center; }}
 mat-form-field{max-width: 400px;width: 100%;margin-top: 5px;}
-.form-div{display: flex;flex-direction: column;align-items: center;margin-top: 40px;}
+.form-div{display: flex;flex-direction: column;align-items: center;width: 100%;max-width: 440px;margin: auto;}
 table th.mat-header-cell,table td.mat-cell,table td.mat-footer-cell{padding: 0 30px;}
 table th.mat-column-Action.mat-header-cell{padding: 0 40px;}
 .cta ,.gender-span{display: flex;max-width: 400px;width: 100%;align-items: center;justify-content: space-between;margin: 6px 0 20px;}
@@ -25,4 +25,9 @@ tr.mat-row:hover {background: whitesmoke;}
 .table-res{overflow-y: hidden}
 .gender-span{display: flex;max-width: 400px;width: 100%;align-items: center;justify-content: space-between;margin: 6px 0 20px;
     mat-radio-group{display: inline-flex;justify-content: space-between;width: 60%;}}
-
+mat-card.mat-card{width: 100%;max-width: 500px;margin:50px auto;padding: 16px 40px;
+    .mat-card-avatar{margin-left: 6px;}
+    .mat-card-header-text{margin-left: auto;margin-right: 10px;}
+    .mat-card-actions{margin-left: 0;margin-right:10px;display:flex;
+        .back-btn{margin-right: auto;}}}
+    mat-checkbox{margin-left: auto;margin-right: 10px;}

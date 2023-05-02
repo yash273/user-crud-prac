@@ -2,65 +2,71 @@
     <h1>Update User</h1>
 </div>
 
-<form class="form-div">
+<mat-card class="form-card">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"><mat-icon>edit</mat-icon></div>
+        <mat-card-title>Update Your Details</mat-card-title>
+        <!-- <mat-card-subtitle>------</mat-card-subtitle> -->
+    </mat-card-header>
+    <mat-card-content>
+        <form class="form-div" #regForm="ngForm">
 
-    <mat-form-field appearance="outline">
-        <mat-label>Name</mat-label>
-        <input matInput [(ngModel)]="userObj.userName" name="userName" pattern="[a-zA-Z]+$" type="text" #userName="ngModel" required ngModel placeholder="Name">
-        <mat-error *ngIf="userName.invalid">Please enter valid input</mat-error>
-    </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput [(ngModel)]="userObj.userName" name="userName" pattern="[a-zA-Z]+$" type="text" #userName="ngModel" required ngModel placeholder="Name">
+                <mat-error *ngIf="userName.invalid">Please enter valid input</mat-error>
+            </mat-form-field>
 
-    <span class="gender-span">
-        <label>Your Gender</label>
-        <mat-radio-group aria-label="Select an option" [(ngModel)]="userObj.userGender" name="userGender" #userGender="ngModel" required ngModel >
-            <mat-radio-button value="male">Male</mat-radio-button>
-            <mat-radio-button value="female">Female</mat-radio-button>
-            <mat-radio-button value="other">Other</mat-radio-button>
-            <!-- <mat-error *ngIf="userGender.invalid">Please choose your Gender</mat-error> -->
-          </mat-radio-group>
-        </span>
-
-    <mat-form-field appearance="outline">
-        <mat-label>City</mat-label>
-        <mat-select [(ngModel)]="userObj.userCity" name="userCity" type="text" #userCity="ngModel" required ngModel>
-            <mat-option value="surat">Surat</mat-option>
-            <mat-option value="ahemdabad">Ahemdabad</mat-option>
-            <mat-option value="vadodara">Vadodara</mat-option>
-            <mat-option value="rajkot">Rajkot</mat-option>
-            <mat-option value="bhavnagar">Bhavnagar</mat-option>
-        </mat-select>
-        <mat-error *ngIf="userCity.invalid">Please select any</mat-error>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-        <mat-label>Address</mat-label>
-        <textarea matInput [(ngModel)]="userObj.userAddress" name="userAddress" #userAddress="ngModel" type="text"  ngModel placeholder="Address" required></textarea>
-        <mat-error *ngIf="userAddress.invalid">Please enter valid input</mat-error>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-        <mat-label>Mobile</mat-label>
-        <input matInput [(ngModel)]="userObj.userMobile" placeholder="9876543210" pattern="(\+\d{1,3}[- ]?)?\d{10}$" name="userMobile" type="tel" #userMobile="ngModel" required ngModel>
-        <mat-error *ngIf="userMobile.invalid ">Please enter valid input</mat-error>
-    </mat-form-field>
-
-    <!-- <mat-checkbox [(ngModel)]="userObj.userCheck" class="example-margin" name="userCheck"  #userMobile="ngModel" ngModel>Check me!</mat-checkbox> -->
+            <span class="gender-span">
+                <mat-label>Your Gender:</mat-label>
+                <mat-radio-group aria-label="Select an option" [(ngModel)]="userObj.userGender" name="userGender" #userGender="ngModel" required ngModel>
+                    <mat-radio-button value="male">Male</mat-radio-button>
+                    <mat-radio-button value="female">Female</mat-radio-button>
+                    <mat-radio-button value="other">Other</mat-radio-button>
+                    <!-- <mat-error *ngIf="userGender.invalid">Please choose your Gender</mat-error> -->
+                </mat-radio-group>
+            </span>
 
 
-    <mat-form-field appearance="outline">
-        <mat-label>Email</mat-label>
-        <input matInput [(ngModel)]="userObj.userEmail" email placeholder="name@example.com" name="userEmail" type="text" required #userEmail="ngModel" ngModel>
-        <mat-error *ngIf="userEmail.invalid">Please enter valid email</mat-error>
-    </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>City</mat-label>
+                <mat-select [(ngModel)]="userObj.userCity" name="userCity" type="text" #userCity="ngModel" required ngModel>
+                    <mat-option value="surat">Surat</mat-option>
+                    <mat-option value="ahemdabad">Ahemdabad</mat-option>
+                    <mat-option value="vadodara">Vadodara</mat-option>
+                    <mat-option value="rajkot">Rajkot</mat-option>
+                    <mat-option value="bhavnagar">Bhavnagar</mat-option>
+                </mat-select>
+                <mat-error *ngIf="userCity.invalid">Please select any</mat-error>
+            </mat-form-field>
 
-    <div class="cta">
-        <button mat-icon-button title="back" color="primary" [routerLink]="['/userlisting']">
+            <mat-form-field appearance="outline">
+                <mat-label>Address</mat-label>
+                <textarea matInput [(ngModel)]="userObj.userAddress" pattern="^[^\s]+(\s.*)?$" name="userAddress" #userAddress="ngModel" type="text" ngModel placeholder="Address" required></textarea>
+                <mat-error *ngIf="userAddress.invalid">Please enter valid input</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Mobile</mat-label>
+                <input matInput [(ngModel)]="userObj.userMobile" placeholder="9876543210" pattern="(\+\d{1,3}[- ]?)?\d{10}$" name="userMobile" type="tel" #userMobile="ngModel" required ngModel>
+                <mat-error *ngIf="userMobile.invalid ">Please enter valid input</mat-error>
+            </mat-form-field>
+
+
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput [(ngModel)]="userObj.userEmail" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" placeholder="name@example.com" name="userEmail" type="text" required #userEmail="ngModel" ngModel>
+                <mat-error *ngIf="userEmail.invalid">Please enter valid email</mat-error>
+            </mat-form-field>
+            <mat-checkbox [(ngModel)]="userObj.userCheck" class="example-margin" name="userCheck" #userMobile="ngModel" ngModel>Check me!</mat-checkbox>
+        </form>
+
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-icon-button title="back" color="primary" [routerLink]="['/userlisting']" class="back-btn">
             <mat-icon>keyboard_backspace</mat-icon>
         </button>
-
-        <mat-checkbox [(ngModel)]="userObj.userCheck" class="example-margin" name="userCheck"  #userMobile="ngModel" ngModel >Check me!</mat-checkbox>
-
-
         <button mat-flat-button title="update data" color="accent" (click)="updateUser()" [routerLink]="['/userlisting']">Update</button>
-    </div>
-</form>
+
+    </mat-card-actions>
+</mat-card>

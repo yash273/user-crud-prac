@@ -45,7 +45,7 @@
 
       <ng-container matColumnDef="userCheck">
         <th mat-header-cell *matHeaderCellDef> Checked </th>
-        <td mat-cell *matCellDef="let user" > {{user.userCheck}} </td>
+        <td mat-cell *matCellDef="let user"> {{user.userCheck}} </td>
       </ng-container>
 
       <ng-container matColumnDef="userEmail">
@@ -59,6 +59,8 @@
           <button mat-icon-button title="edit data" color="primary" [routerLink]="['/userupdate',user.userId]">
             <mat-icon>edit</mat-icon>
           </button>
+          <!-- <button mat-raised-button (click)="openDialog()" [routerLink]="['/viewuser',user.userId]">Pick one</button> -->
+
           <button mat-icon-button title="view" color="accent" [routerLink]="['/viewuser',user.userId]">
             <mat-icon>visibility</mat-icon>
           </button>
@@ -74,6 +76,7 @@
     </table>
 
   </div>
+
 
 
 </div>

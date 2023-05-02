@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { userObj } from 'src/app/interfaces/user';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-userlisting',
@@ -10,10 +11,19 @@ import { userObj } from 'src/app/interfaces/user';
 export class UserlistingComponent implements OnInit {
 
   userList: userObj[];
-  constructor() { 
+  constructor( public dialog: MatDialog ) { 
     this.userList = [];
     // const ELEMENT_DATA : userObj[]
+    
   }
+  
+
+// constructor( ) { 
+//     this.userList = [];
+//     // const ELEMENT_DATA : userObj[]
+//   }
+
+
 
   ngOnInit(): void {
     // debugger;

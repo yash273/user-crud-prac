@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserregisterComponent } from './pages/userregister/userregister.component';
 import { UserlistingComponent } from './pages/userlisting/userlisting.component';
+import { ViewuserComponent } from './pages/viewuser/viewuser.component';
+// import { ViewDialogComponent } from './pages/view-dialog/view-dialog.component';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -16,10 +18,10 @@ import { FormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { UserupdateComponent } from './pages/userupdate/userupdate.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ViewuserComponent } from './pages/viewuser/viewuser.component';
 import { MatRadioModule } from '@angular/material/radio';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-
+import {MatCardModule} from '@angular/material/card';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     UserregisterComponent,
     UserlistingComponent,
     UserupdateComponent,
-    ViewuserComponent
+    ViewuserComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatTableModule,
     NgbModule,
     MatRadioModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatCardModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

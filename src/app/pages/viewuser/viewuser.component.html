@@ -3,7 +3,7 @@
     <button mat-flat-button title="user list" color="accent" [routerLink]="['/userlisting']">User List</button>
 </div>
 
-<form class="form-div">
+<!-- <form class="form-div">
 
     <mat-form-field appearance="outline">
         <mat-label>Name</mat-label>
@@ -30,7 +30,7 @@
         <input matInput [(ngModel)]="userObj.userMobile" name="userMobile" readonly>
     </mat-form-field>
 
-    <!-- <mat-checkbox [(ngModel)]="userObj.userCheck" class="example-margin" name="userCheck"  #userMobile="ngModel" ngModel >Check me!</mat-checkbox> -->
+    <mat-checkbox [(ngModel)]="userObj.userCheck" class="example-margin" name="userCheck"  #userMobile="ngModel" ngModel >Check me!</mat-checkbox>
 
     <mat-form-field appearance="outline">
         <mat-label>Checked</mat-label>
@@ -42,4 +42,74 @@
         <input matInput [(ngModel)]="userObj.userEmail" name="userEmail" type="text" readonly>
     </mat-form-field>
 
-</form>
+</form> -->
+
+
+
+<mat-card class="form-card">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"><mat-icon>visibility</mat-icon></div>
+        <mat-card-title>Details</mat-card-title>
+        <!-- <mat-card-subtitle>------</mat-card-subtitle> -->
+    </mat-card-header>
+    <mat-card-content>
+        <p>Name: {{userObj.userName}}</p>
+        <p>Gender: {{userObj.userGender}}</p>
+        <p>City: {{userObj.userCity}}</p>
+        <p>Address: {{userObj.userAddress}}</p>
+        <p>Mobile: {{userObj.userMobile}}</p>
+        <p>Check: {{userObj.userCheck}}</p>
+        <p>Email: {{userObj.userEmail}}</p>
+
+
+
+        <!-- 
+        <form class="form-div">
+
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput [(ngModel)]="userObj.userName" name="userName" type="text" readonly>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Gender</mat-label>
+                <input matInput [(ngModel)]="userObj.userGender" name="userGender" readonly>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>City</mat-label>
+                <input matInput [(ngModel)]="userObj.userCity" name="userCity" type="text" readonly>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Favorite Color</mat-label>
+                <input matInput [(ngModel)]="userObj.userAddress" name="userAddress" type="text" readonly>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Mobile</mat-label>
+                <input matInput [(ngModel)]="userObj.userMobile" name="userMobile" readonly>
+            </mat-form-field>
+
+
+            <mat-form-field appearance="outline">
+                <mat-label>Checked</mat-label>
+                <input matInput [(ngModel)]="userObj.userCheck" name="userCheck" readonly>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput [(ngModel)]="userObj.userEmail" name="userEmail" type="text" readonly>
+            </mat-form-field>
+
+        </form> -->
+
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-icon-button title="back" color="primary" [routerLink]="['/userlisting']" class="back-btn">
+            <mat-icon>keyboard_backspace</mat-icon>
+        </button>
+        <!-- <button mat-flat-button title="update data" color="accent" (click)="updateUser()" [routerLink]="['/userlisting']">Update</button> -->
+
+    </mat-card-actions>
+</mat-card>

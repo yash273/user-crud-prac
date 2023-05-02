@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { userObj } from 'src/app/interfaces/user';
 
@@ -8,18 +8,23 @@ import { userObj } from 'src/app/interfaces/user';
   styles: [
   ]
 })
-export class UserregisterComponent implements OnInit {
+export class UserregisterComponent implements OnInit, OnChanges {
 
-  userObj: userObj;
+  // userObj: userObj;
   constructor(private router: Router) { 
     this.userObj = new userObj();
   }
 
+  @Input() userObj : userObj
+
   ngOnInit( ): void {
+  }
+  ngOnChanges(){
+    console.log('chnge')
   }
 
   newUserId(){
-    // debugger;
+    debugger;
     const oldRecords = localStorage.getItem('userList');
     if ( oldRecords !== null) {
       const userList = JSON.parse(oldRecords);
@@ -30,7 +35,7 @@ export class UserregisterComponent implements OnInit {
   }
 
   saveUser() {
-    // debugger;
+    debugger;
     const latestId = this.newUserId();
     this.userObj.userId = latestId;
     const oldRecords = localStorage.getItem('userList');
