@@ -17,8 +17,7 @@ export class ConfirmDialogService {
       width: '400px',
       disableClose:true,
       data :{
-        name : newData.userName,
-        email : newData.userEmail,
+        name : newData.userName
       }
     });
   }
