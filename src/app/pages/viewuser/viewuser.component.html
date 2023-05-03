@@ -53,13 +53,13 @@
         <!-- <mat-card-subtitle>------</mat-card-subtitle> -->
     </mat-card-header>
     <mat-card-content>
-        <p>Name: {{userObj.userName}}</p>
-        <p>Gender: {{userObj.userGender}}</p>
-        <p>City: {{userObj.userCity}}</p>
-        <p>Address: {{userObj.userAddress}}</p>
-        <p>Mobile: {{userObj.userMobile}}</p>
-        <p>Check: {{userObj.userCheck}}</p>
-        <p>Email: {{userObj.userEmail}}</p>
+        <p><b>Name:</b> {{userObj.userName}}</p>
+        <p><b>Gender:</b> {{userObj.userGender}}</p>
+        <p><b>City:</b> {{userObj.userCity}}</p>
+        <p><b>Address:</b> {{userObj.userAddress}}</p>
+        <p><b>Mobile:</b> {{userObj.userMobile}}</p>
+        <p><b>Check:</b> {{userObj.userCheck}}</p>
+        <p><b>Email:</b> {{userObj.userEmail}}</p>
 
 
 
@@ -106,9 +106,11 @@
 
     </mat-card-content>
     <mat-card-actions>
-        <button mat-icon-button title="back" color="primary" [routerLink]="['/userlisting']" class="back-btn">
+        <button mat-icon-button title="back" color="primary" class="back-btn" (click)="onClose()">
             <mat-icon>keyboard_backspace</mat-icon>
         </button>
+        <!-- [routerLink]="['/userlisting']" -->
+
         <!-- <button mat-flat-button title="update data" color="accent" (click)="updateUser()" [routerLink]="['/userlisting']">Update</button> -->
 
     </mat-card-actions>

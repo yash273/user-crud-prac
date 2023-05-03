@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { userObj } from 'src/app/interfaces/user';
+import { MatDialogRef } from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-viewuser',
@@ -12,8 +14,9 @@ export class ViewuserComponent implements OnInit {
  
   userObj: userObj;
   
-  constructor(private route: ActivatedRoute, private router: Router) { 
-    // debugger;
+  constructor(private route: ActivatedRoute, private router: Router,
+    private dialogRef: MatDialogRef<ViewuserComponent>) { 
+    debugger;
     this.userObj = new userObj();
     this.route.params.subscribe((res) => {
       this.userObj.userId = res['id'];
@@ -36,6 +39,10 @@ export class ViewuserComponent implements OnInit {
         this.userObj.userGender = currentUser.userGender;
       }
     }
+  }
+
+    onClose(){
+    this.dialogRef.close();
   }
 
 }

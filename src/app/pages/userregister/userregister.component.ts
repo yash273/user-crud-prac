@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { userObj } from 'src/app/interfaces/user';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-userregister',
@@ -8,23 +9,19 @@ import { userObj } from 'src/app/interfaces/user';
   styles: [
   ]
 })
-export class UserregisterComponent implements OnInit, OnChanges {
+export class UserregisterComponent implements OnInit {
 
-  // userObj: userObj;
-  constructor(private router: Router) { 
+  userObj: userObj;
+  constructor(private router: Router,
+    private dialogRef: MatDialogRef<UserregisterComponent>) { 
     this.userObj = new userObj();
+
   }
-
-  @Input() userObj : userObj
-
   ngOnInit( ): void {
-  }
-  ngOnChanges(){
-    console.log('chnge')
   }
 
   newUserId(){
-    debugger;
+    // debugger;
     const oldRecords = localStorage.getItem('userList');
     if ( oldRecords !== null) {
       const userList = JSON.parse(oldRecords);
@@ -35,7 +32,7 @@ export class UserregisterComponent implements OnInit, OnChanges {
   }
 
   saveUser() {
-    debugger;
+    // debugger;
     const latestId = this.newUserId();
     this.userObj.userId = latestId;
     const oldRecords = localStorage.getItem('userList');
@@ -48,9 +45,11 @@ export class UserregisterComponent implements OnInit, OnChanges {
       userArr.push(this.userObj);
       localStorage.setItem('userList',JSON.stringify(userArr));
     }
-    // this.router.navigateByUrl('/userlisting');
+    this.onClose();
+  }
 
-
+  onClose(){
+    this.dialogRef.close();
   }
 
 }

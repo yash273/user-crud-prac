@@ -21,8 +21,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatRadioModule } from '@angular/material/radio';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatCardModule} from '@angular/material/card';
-import {MatDialogModule} from '@angular/material/dialog';
+import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import { ViewDialogComponent } from './pages/view-dialog/view-dialog.component';
+import { MatConfirmDialogComponent } from './pages/mat-confirm-dialog/mat-confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ViewDialogComponent } from './pages/view-dialog/view-dialog.component';
     UserupdateComponent,
     ViewuserComponent,
     ViewDialogComponent,
+    MatConfirmDialogComponent,
 
   ],
   imports: [
@@ -51,7 +53,14 @@ import { ViewDialogComponent } from './pages/view-dialog/view-dialog.component';
     MatCardModule,
     MatDialogModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+     {
+       provide: MatDialogRef,
+       useValue: {}
+     },
+     
+  ],
+  bootstrap: [AppComponent],
+  entryComponents: [MatConfirmDialogComponent,UserregisterComponent,ViewuserComponent]
 })
 export class AppModule { }

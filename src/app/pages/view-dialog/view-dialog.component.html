@@ -1,16 +1,34 @@
-<mat-dialog #myDialog [data]="record"></mat-dialog>
-<h1 mat-dialog-title>Hi </h1>
-<div mat-dialog-content>
-    <p>Name: {{data.userName}}</p>
-    <p>Gender: {{data.userGender}}</p>
-    <p>City: {{data.userCity}}</p>
-    <p>Address: {{data.userAddress}}</p>
-    <p>Mobile: {{data.userMobile}}</p>
-    <p>Check: {{data.userCheck}}</p>
-    <p>Email: {{data.userEmail}}</p>
-        <ng-container *ngFor="let item of data">{{item}}</ng-container>
+<div class="page-title mat-elevation-z6">
+    <h1 mat-dialog-title>Details of {{data.name}}</h1>
 </div>
+
+<div mat-dialog-content>
+    <span>
+        <h3>Name:</h3>
+        <p>{{data.name}}</p>
+    </span>
+    <span>
+        <h3>Email:</h3>
+        <p> {{data.email}}</p>
+    </span>
+    <span>
+        <h3>City:</h3>
+        <p>{{data.city}}</p>
+    </span>
+    <span>
+        <h3>Address:</h3>
+        <p> {{data.add}}</p>
+    </span>
+    <span>
+        <h3>Mobile:</h3>
+        <p>{{data.mob}}</p>
+    </span>
+    <span>
+        <h3>Check:</h3>
+        <p> {{data.checked}}</p>
+    </span>
+</div>
+
 <div mat-dialog-actions>
-    <button mat-button>No Thanks</button>
-    <button mat-button mat-dialog-close>Ok</button>
+    <button mat-button cdkFocusInitial mat-dialog-close (click)="onClose">Ok</button>
 </div>

@@ -39,10 +39,6 @@ export class UserupdateComponent implements OnInit {
     }
   }
 
-  // ngDoCheck(){
-    
-  // }
-
   updateUser() {
     // debugger;
     

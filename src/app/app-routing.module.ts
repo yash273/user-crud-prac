@@ -6,10 +6,10 @@ import { UserupdateComponent } from './pages/userupdate/userupdate.component';
 import { ViewuserComponent } from './pages/viewuser/viewuser.component';
 
 const routes: Routes = [
-  {
-    path:'userregister',
-    component:UserregisterComponent
-  },
+  // {
+  //   path:'userregister',
+  //   component:UserregisterComponent
+  // },
   {
     path:'userlisting',
     component:UserlistingComponent
@@ -18,12 +18,12 @@ const routes: Routes = [
     path:'userupdate/:id',
     component:UserupdateComponent
   },
+  // {
+  //   path:'viewuser/:id',
+  //   component:ViewuserComponent
+  // },
   {
-    path:'viewuser/:id',
-    component:ViewuserComponent
-  },
-  {
-    path:'', redirectTo:'userregister',pathMatch:'full'
+    path:'', redirectTo:'userlisting',pathMatch:'full'
   }
 ];
 

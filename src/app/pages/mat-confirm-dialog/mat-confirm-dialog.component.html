@@ -1,0 +1,19 @@
+<div class="page-title mat-elevation-z6">
+    <h1 mat-dialog-title>Delete this record?</h1>
+</div>
+<div mat-dialog-content>
+    <h2>Following record will be deleted</h2>
+    <span>
+        <h3>Name:</h3>
+        <p>{{data.name}}</p>
+    </span>
+    <span>
+        <h3>Email:</h3>
+        <p> {{data.email}}</p>
+    </span>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button cdkFocusInitial [mat-dialog-close]="false">No Thanks</button>
+    <button mat-button [mat-dialog-close]="true">Ok</button>
+</div>

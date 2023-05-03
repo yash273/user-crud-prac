@@ -1,10 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
-// @import url(./node_modules/bootstrap/scss/bootstrap.scss);
-
-
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
-
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: azure;}
 
@@ -30,4 +23,8 @@ mat-card.mat-card{width: 100%;max-width: 500px;margin:50px auto;padding: 16px 40
     .mat-card-header-text{margin-left: auto;margin-right: 10px;}
     .mat-card-actions{margin-left: 0;margin-right:10px;display:flex;
         .back-btn{margin-right: auto;}}}
-    mat-checkbox{margin-left: auto;margin-right: 10px;}
+mat-checkbox{margin-left: auto;margin-right: 10px;}
+body .mat-dialog-content{ margin-top: 20px;
+    span{display:  flex;align-items: baseline;
+        p{margin-left: 10px;}}}
+app-userregister .mat-card-actions{display: flex;justify-content: space-between;}

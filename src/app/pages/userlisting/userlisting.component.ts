@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { userObj } from 'src/app/interfaces/user';
-import { MatDialog } from '@angular/material/dialog';
-import { ViewDialogComponent } from '../view-dialog/view-dialog.component';
+import { MatDialog,MatDialogConfig } from '@angular/material/dialog';
+import { ConfirmDialogService } from 'src/app/service/confirm-dialog.service';
+import { UserregisterComponent } from '../userregister/userregister.component';
+import { ViewuserComponent } from '../viewuser/viewuser.component';
 
 @Component({
   selector: 'app-userlisting',
@@ -9,74 +11,63 @@ import { ViewDialogComponent } from '../view-dialog/view-dialog.component';
   styles: [
   ]
 })
-export class UserlistingComponent implements OnInit {
-  [x: string]: any;
+export class UserlistingComponent implements OnInit, DoCheck {
 
   userList: userObj[];
-  constructor( private dialog: MatDialog ) { 
+  userObj: userObj;
+
+  constructor( private dialog: MatDialog, 
+    private dialogService: ConfirmDialogService) { 
     this.userList = [];
-    // const ELEMENT_DATA : userObj[]
+    this.userObj = new userObj();
     
   }
-  
-
-// constructor( ) { 
-//     this.userList = [];
-//     // const ELEMENT_DATA : userObj[]
-//   }
-
-
-
-  ngOnInit(): void {
-    // debugger;
+   ngOnInit(): void {
     const records = localStorage.getItem('userList');
     if (records !== null) {
       this.userList = JSON.parse(records);
-      const hi =this.userList
     } 
-
   }
 
+  ngDoCheck(){
+    const records = localStorage.getItem('userList');
+    if (records !== null) {
+      this.userList = JSON.parse(records);
+    }
+  }
   delete(id : any){
     // debugger
-    const oldRecords = localStorage.getItem('userList');
-    if(confirm("Are sure you want to delete this item ?"))
-    if (oldRecords !== null) {
-      const userList = JSON.parse(oldRecords);
-      userList.splice(userList.findIndex( (a : any) => a.userId == id), 1);
-      localStorage.setItem('userList', JSON.stringify(userList));
+    const thisId =this.userList.findIndex( (m : any) => m.userId == id)
+    this.dialogService.openConfirmDialog(this.userList[thisId])
+    .afterClosed().subscribe((res:boolean) =>{
+      if(res){
+        const oldRecords = localStorage.getItem('userList');
+        if (oldRecords !== null) {
+        const userList = JSON.parse(oldRecords);
+        userList.splice(userList.findIndex( (a : any) => a.userId == id), 1);
+        localStorage.setItem('userList', JSON.stringify(userList));
+      }
+      const records = localStorage.getItem('userList');
+      if (records !== null) {
+        this.userList = JSON.parse(records);
+      }
     }
-    const records = localStorage.getItem('userList');
-    if (records !== null) {
-      this.userList = JSON.parse(records);
-    }
+    });
   }
-
- 
 
   displayedColumns: string[] = ['srNo','userName','userGender', 'userCity', 'userAddress', 'userMobile','userCheck', 'userEmail', 'Action'];
 
- 
-  //   const records = localStorage.getItem('userList');
+  onCreate(){
+    // debugger
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "600px";
+    this.dialog.open(UserregisterComponent,dialogConfig);
+  };
 
-  //   this.dialog.open(ViewDialogComponent,{width:'100%',maxWidth:'400px',
-      
-  //  data:{
-  //   type:'hi'
-  //  }
-  // })
-
-  openDialog() {
-    // const data = JSON.parse(localStorage.getItem('userList'));
-    // const records = localStorage.getItem('userList');
-    // const data =JSON.parse(records);
-    const dialogRef = this.dialog.open(ViewDialogComponent, {
-      data: this.userList
-    });
-     
-
-  
+  onView(id:any){
+    const thisId =this.userList.findIndex( (m : any) => m.userId == id)
+    this.dialogService.openviewDialog(this.userList[thisId])
   }
-  
-
 }
