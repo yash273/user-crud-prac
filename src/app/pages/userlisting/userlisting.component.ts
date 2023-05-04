@@ -3,7 +3,7 @@ import { userObj } from 'src/app/interfaces/user';
 import { MatDialog,MatDialogConfig } from '@angular/material/dialog';
 import { ConfirmDialogService } from 'src/app/service/confirm-dialog.service';
 import { UserregisterComponent } from '../userregister/userregister.component';
-import { UserupdateComponent } from '../userupdate/userupdate.component';
+// import { ViewuserComponent } from '../viewuser/viewuser.component';
 
 @Component({
   selector: 'app-userlisting',
@@ -71,13 +71,8 @@ export class UserlistingComponent implements OnInit, DoCheck {
     this.dialogService.openviewDialog(this.userList[thisId])
   }
 
-  onUpdate(id:any){
-    let thisId =this.userList.findIndex( (m : any) => m.userId == id)
-    // this.dialogService.openUpdateDialog(this.userList[thisId])
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-    dialogConfig.width = "600px";
-    this.dialog.open(UserupdateComponent,dialogConfig);
-  }
+  // onUpdate(id:any){
+  //   const thisId =this.userList.findIndex( (m : any) => m.userId == id)
+  //   this.dialogService.openUpdateDialog(this.userList[thisId])
+  // }
 }

@@ -1,5 +1,5 @@
 export class userObj{
-    userId?: string;
+    userId?: any;
     userName?: string;
     userCity?: string;
     userAddress?: string;
@@ -8,4 +8,5 @@ export class userObj{
     userCheck?: string;
     userGender?: string;
   static userName: any;
+  static userId: number;
 }
