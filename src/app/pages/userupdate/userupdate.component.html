@@ -2,10 +2,10 @@
     <h1>Update User</h1>
 </div>
 
-<mat-card class="form-card">
+<mat-card class="form-card updatecard">
     <mat-card-header>
         <div mat-card-avatar class="example-header-image"><mat-icon>edit</mat-icon></div>
-        <mat-card-title>Update Details</mat-card-title>
+        <mat-card-title>Update Your Details</mat-card-title>
         <!-- <mat-card-subtitle>------</mat-card-subtitle> -->
     </mat-card-header>
     <mat-card-content>
@@ -63,8 +63,10 @@
 
     </mat-card-content>
     <mat-card-actions>
-        <button mat-flat-button title="back" cdkFocusInitial class="back-btn" (click)="onClose()">Close</button>
-        <button mat-flat-button title="update data" color="accent" (click)="updateUser()">Update</button>
+        <button mat-icon-button title="back" color="primary" [routerLink]="['/userlisting']" class="back-btn">
+            <mat-icon>keyboard_backspace</mat-icon>
+        </button>
+        <button mat-flat-button title="update data" color="accent" (click)="updateUser()" [routerLink]="['/userlisting']">Update</button>
 
     </mat-card-actions>
 </mat-card>
