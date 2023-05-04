@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { userObj } from 'src/app/interfaces/user';
 
@@ -12,12 +13,18 @@ export class UserupdateComponent implements OnInit {
 
   userObj: userObj;
   
-  constructor(private route: ActivatedRoute, private router: Router) { 
+  // constructor(private route: ActivatedRoute, private router: Router) { 
+  //   // debugger;
+  //   this.userObj = new userObj();
+  //   this.route.params.subscribe((res) => {
+  //     this.userObj.userId = res['id'];
+  //   });
+  // }
+    constructor(private route: ActivatedRoute, private router: Router,
+      private dialogRef: MatDialogRef<UserupdateComponent>) { 
     // debugger;
     this.userObj = new userObj();
-    this.route.params.subscribe((res) => {
-      this.userObj.userId = res['id'];
-    });
+    
   }
 
   ngOnInit(): void {
@@ -25,7 +32,7 @@ export class UserupdateComponent implements OnInit {
     const oldRecords = localStorage.getItem('userList');
     if (oldRecords !== null) {
       const userList =JSON.parse(oldRecords);
-      const currentUser = userList.find( (m : any) => m.userId == this.userObj.userId);
+      const currentUser = userList.find( (m : any) => m.id == this.userObj.userId);
       if (currentUser !== undefined) {
         this.userObj.userCity = currentUser.userCity;
         this.userObj.userEmail = currentUser.userEmail;
@@ -49,9 +56,12 @@ export class UserupdateComponent implements OnInit {
       userList.push(this.userObj);
       localStorage.setItem('userList',JSON.stringify(userList));
     } 
+    this.onClose();
     // this.router.navigateByUrl('/userlisting');
 
   }
-
+  onClose(){
+    this.dialogRef.close();
+  }
 
 }

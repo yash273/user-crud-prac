@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserregisterComponent } from './pages/userregister/userregister.component';
 import { UserlistingComponent } from './pages/userlisting/userlisting.component';
-import { ViewuserComponent } from './pages/viewuser/viewuser.component';
+// import { ViewuserComponent } from './pages/viewuser/viewuser.component';
 // import { ViewDialogComponent } from './pages/view-dialog/view-dialog.component';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -24,6 +24,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import { ViewDialogComponent } from './pages/view-dialog/view-dialog.component';
 import { MatConfirmDialogComponent } from './pages/mat-confirm-dialog/mat-confirm-dialog.component';
+// import { UpdateDailogComponent } from './pages/update-dailog/update-dailog.component';
 
 @NgModule({
   declarations: [
@@ -31,9 +32,10 @@ import { MatConfirmDialogComponent } from './pages/mat-confirm-dialog/mat-confir
     UserregisterComponent,
     UserlistingComponent,
     UserupdateComponent,
-    ViewuserComponent,
+    // ViewuserComponent,
     ViewDialogComponent,
     MatConfirmDialogComponent,
+    // UpdateDailogComponent,
 
   ],
   imports: [
@@ -61,6 +63,6 @@ import { MatConfirmDialogComponent } from './pages/mat-confirm-dialog/mat-confir
      
   ],
   bootstrap: [AppComponent],
-  entryComponents: [MatConfirmDialogComponent,UserregisterComponent,ViewuserComponent]
+  entryComponents: [MatConfirmDialogComponent,UserregisterComponent]
 })
 export class AppModule { }
