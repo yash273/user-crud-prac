@@ -35,7 +35,7 @@
 
       <ng-container matColumnDef="userAddress">
         <th mat-header-cell *matHeaderCellDef> Address </th>
-        <td mat-cell *matCellDef="let user"> {{user.userAddress | titlecase}} </td>
+        <td mat-cell *matCellDef="let user">{{ user.userAddress | slice: 0:50}} {{ user.userAddress.length > 50 ? '...' : ''}} </td>
       </ng-container>
 
 

@@ -42,7 +42,7 @@
 
             <mat-form-field appearance="outline">
                 <mat-label>Address</mat-label>
-                <textarea matInput [(ngModel)]="userObj.userAddress" pattern="^[^\s]+(\s.*)?$" name="userAddress" #userAddress="ngModel" type="text" ngModel placeholder="Address" required></textarea>
+                <textarea rows="5" matInput [(ngModel)]="userObj.userAddress" pattern="^[^\s]+(\s.*)?$" name="userAddress" #userAddress="ngModel" type="text" ngModel placeholder="Address" required></textarea>
                 <mat-error *ngIf="userAddress.invalid">Please enter valid input</mat-error>
             </mat-form-field>
 
