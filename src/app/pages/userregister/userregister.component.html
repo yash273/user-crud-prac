@@ -58,7 +58,7 @@
                 <input matInput [(ngModel)]="userObj.userEmail" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" placeholder="name@example.com" name="userEmail" type="text" required #userEmail="ngModel" ngModel>
                 <mat-error *ngIf="userEmail.invalid">Please enter valid email</mat-error>
             </mat-form-field>
-            <mat-checkbox [(ngModel)]="userObj.userCheck" class="example-margin" name="userCheck" #userCheck="ngModel" ngModel>Check me!</mat-checkbox>
+            <mat-checkbox [(ngModel)]="userObj.userCheck" class="example-margin" name="userCheck" #userCheck="ngModel" ngModel [checked]="false">Check me!</mat-checkbox>
         </form>
 
     </mat-card-content>

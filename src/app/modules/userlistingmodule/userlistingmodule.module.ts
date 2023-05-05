@@ -23,4 +23,8 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
   ],
   entryComponents: [MatConfirmDialogComponent,UserregisterComponent]
 })
-export class UserlistingmoduleModule { }
+export class UserlistingmoduleModule { 
+  // constructor(){
+  //   console.log
+  // }
+}

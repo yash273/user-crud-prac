@@ -1,11 +1,11 @@
 export class userObj{
-    userId?: any;
+    userId?: number;
     userName?: string;
     userCity?: string;
     userAddress?: string;
     userMobile?: number;
     userEmail?: string;
-    userCheck?: string;
+    userCheck?: boolean;
     userGender?: string;
   // static userName: any;
   // static userId: number;
