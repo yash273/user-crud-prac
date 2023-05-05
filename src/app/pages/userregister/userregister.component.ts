@@ -20,12 +20,14 @@ export class UserregisterComponent implements OnInit {
   ngOnInit( ): void {
   }
 
-  newUserId(){
+   newUserId(){
     // debugger;
-    const oldRecords = localStorage.getItem('userList');
+    const oldRecords = localStorage.getItem('userList'); 
     if ( oldRecords !== null) {
-      const userList = JSON.parse(oldRecords);
-      return userList.length + 1;
+      // const userList = JSON.parse(oldRecords);
+      // const lastItem = userList.slice(-1).pop();
+      const lastItemId = JSON.parse(oldRecords).slice(-1).pop().userId;
+      return lastItemId + 1;
     }else {
       return 1;
     }
