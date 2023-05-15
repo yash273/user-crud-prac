@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { MatConfirmDialogComponent } from '../pages/mat-confirm-dialog/mat-confirm-dialog.component';
-import { ViewDialogComponent } from '../pages/view-dialog/view-dialog.component';
-import { userObj } from '../interfaces/user';
+import { MatConfirmDialogComponent } from './mat-confirm-dialog.component';
+import { ViewDialogComponent } from '../view-dialog/view-dialog.component';
+import { userObj } from '../../interfaces/user';
 
 @Injectable({
   providedIn: 'root'

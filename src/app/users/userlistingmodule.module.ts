@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatConfirmDialogComponent } from 'src/app/pages/mat-confirm-dialog/mat-confirm-dialog.component';
-import { UserlistingComponent } from 'src/app/pages/userlisting/userlisting.component';
-import { UserregisterComponent } from 'src/app/pages/userregister/userregister.component';
-import { UserupdateComponent } from 'src/app/pages/userupdate/userupdate.component';
-import { ViewDialogComponent } from 'src/app/pages/view-dialog/view-dialog.component';
-import { MaterialModule } from '../material/material.module';
 import { AppRoutingModule } from 'src/app/app-routing.module';
+import { MaterialModule } from '../modules/material/material.module';
+import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dialog.component';
+import { UserlistingComponent } from './userlisting/userlisting.component';
+import { UserregisterComponent } from './userregister/userregister.component';
+import { UserupdateComponent } from '../users/userupdate/userupdate.component';
+import { ViewDialogComponent } from '../users/view-dialog/view-dialog.component';
 
 @NgModule({
   declarations: [

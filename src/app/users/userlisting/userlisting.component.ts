@@ -1,7 +1,7 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
 import { userObj } from 'src/app/interfaces/user';
 import { MatDialog,MatDialogConfig } from '@angular/material/dialog';
-import { ConfirmDialogService } from 'src/app/service/confirm-dialog.service';
+import { ConfirmDialogService } from '../mat-confirm-dialog/confirm-dialog.service';
 import { UserregisterComponent } from '../userregister/userregister.component';
 // import { ViewuserComponent } from '../viewuser/viewuser.component';
 
